@@ -8,15 +8,15 @@
 
 #import "ViewController.h"
 #import <CoreLocation/CoreLocation.h>
-const CGFloat endSpeed = 10; //测试极速值；
+const CGFloat endSpeed = 10; //测试极速值单位m/s；
 @interface ViewController ()<CLLocationManagerDelegate>
 @end
 
 @implementation ViewController{
-    NSTimer *timer;
+    NSTimer *timer; //计时器
     int currentTime; //时间计数
     CLLocationManager* _locationManager;
-    CGFloat speed;
+    CGFloat speed; //GPS当前速度
 }
 
 - (void)viewDidLoad {
