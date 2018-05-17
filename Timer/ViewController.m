@@ -23,6 +23,7 @@ const CGFloat endSpeed = 10; //测试极速值；
     [super viewDidLoad];
     self.timeLabel.text=@"00:00:00";
     self.speedLabel.text=@"0km/h";
+    speed = 0;
     _locationManager = [[CLLocationManager alloc]init];
     if ([CLLocationManager locationServicesEnabled]) {
         if ([UIDevice currentDevice].systemVersion.floatValue >=9) {
@@ -49,11 +50,8 @@ const CGFloat endSpeed = 10; //测试极速值；
 //开始按钮处理方法
 - (IBAction)start:(id)sender {
         NSLog(@"开始等待起步");
-        if (speed>=0&&speed<endSpeed) {
-            NSLog(@"计时开始");
-            timer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(timeTick) userInfo:nil repeats:YES];
-            [self timeTick];
-        }
+        timer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(timeTick) userInfo:nil repeats:YES];
+        [self timeTick];
 }
 
 //计时器重置
@@ -73,7 +71,8 @@ const CGFloat endSpeed = 10; //测试极速值；
 
 //计时算法
 -(void)timeTick{
-    if(speed<endSpeed){
+    NSLog(@"进入计时方法");
+    if(speed>0&&speed<endSpeed){
         currentTime++;
         NSLog(@"%d",currentTime);
         [self upData];
