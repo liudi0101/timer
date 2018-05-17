@@ -48,15 +48,13 @@ const CGFloat endSpeed = 10; //测试极速值；
 }
 //开始按钮处理方法
 - (IBAction)start:(id)sender {
-    while (YES) {
+    
         NSLog(@"开始等待起步");
         if (speed>=0&&speed<endSpeed) {
             NSLog(@"计时开始");
             timer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(timeTick) userInfo:nil repeats:YES];
             [self timeTick];
         }
-        break;
-    }
 
 }
 
