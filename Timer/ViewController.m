@@ -22,8 +22,7 @@ const CGFloat endSpeed = 10; //测试极速值单位m/s；
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.timeLabel.text=@"00:00:00";
-    self.speedLabel.text=@"0km/h";
-    speed = 0;
+    self.speedLabel.text=@"0.0km/h";
     _locationManager = [[CLLocationManager alloc]init];
     if ([CLLocationManager locationServicesEnabled]) {
         if ([UIDevice currentDevice].systemVersion.floatValue >=9) {
@@ -57,7 +56,7 @@ const CGFloat endSpeed = 10; //测试极速值单位m/s；
 //计时器重置
 - (IBAction)reset:(id)sender {
     self.timeLabel.text =@"00:00:00";
-    self.speedLabel.text =@"0km/h";
+    self.speedLabel.text =@"0.0km/h";
     timer = nil;
     currentTime = 0;
     NSLog(@"计时器重置成功");
@@ -91,7 +90,7 @@ const CGFloat endSpeed = 10; //测试极速值单位m/s；
     ms = ms - sec*100;
     sec = sec - min*60;
     self.timeLabel.text=[NSString stringWithFormat:@"%@%02d:%02d.%02d",(currentTime <0?@"-":@""),min,sec,ms] ;
-    self.speedLabel.text = [NSString stringWithFormat:@"%02fkm/h",speed*3.6];
+    self.speedLabel.text = [NSString stringWithFormat:@"%.2fkm/h",speed*3.6];
 }
 
 // 成功获取定位数据后方法
