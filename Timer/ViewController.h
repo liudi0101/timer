@@ -13,6 +13,9 @@
 - (IBAction)start:(id)sender;
 - (IBAction)stop:(id)sender;
 - (IBAction)reset:(id)sender;
+- (IBAction)resultBn:(id)sender;
 @property (strong, nonatomic) IBOutlet UILabel *speedLabel;
+@property (strong, nonatomic) IBOutlet UILabel *resultTime;
+@property (strong, nonatomic) IBOutlet UIButton *resultBn;
 @end
 

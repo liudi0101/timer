@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B00B30720D24A980001A0C8 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B00B30620D24A980001A0C8 /* DetailViewController.m */; };
 		5B09449B20A6BD9B00F670C3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B09449A20A6BD9B00F670C3 /* AppDelegate.m */; };
 		5B09449E20A6BD9B00F670C3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B09449D20A6BD9B00F670C3 /* ViewController.m */; };
 		5B0944A120A6BD9B00F670C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B09449F20A6BD9B00F670C3 /* Main.storyboard */; };
@@ -15,7 +16,11 @@
 		5B0944A920A6BD9C00F670C3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B0944A820A6BD9C00F670C3 /* main.m */; };
 		5B0944B320A6BD9D00F670C3 /* TimerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B0944B220A6BD9D00F670C3 /* TimerTests.m */; };
 		5B0944BE20A6BD9D00F670C3 /* TimerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B0944BD20A6BD9D00F670C3 /* TimerUITests.m */; };
+		5B0BBDDC20B06A33000C4B16 /* RecordTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B0BBDDB20B06A33000C4B16 /* RecordTableViewController.m */; };
 		5B2F410420AC55CC005DB99C /* z900rs.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B2F410320AC55CC005DB99C /* z900rs.png */; };
+		5B4594DC20AE7DA60091F87E /* TimeCount.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5B4594DA20AE7DA60091F87E /* TimeCount.xcdatamodeld */; };
+		5B4594E120AE7E710091F87E /* Time+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B4594DF20AE7E710091F87E /* Time+CoreDataClass.m */; };
+		5B4594E220AE7E710091F87E /* Time+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B4594E020AE7E710091F87E /* Time+CoreDataProperties.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5B00B30520D24A980001A0C8 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		5B00B30620D24A980001A0C8 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		5B09449620A6BD9B00F670C3 /* Timer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Timer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B09449920A6BD9B00F670C3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5B09449A20A6BD9B00F670C3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -52,8 +59,15 @@
 		5B0944B920A6BD9D00F670C3 /* TimerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B0944BD20A6BD9D00F670C3 /* TimerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimerUITests.m; sourceTree = "<group>"; };
 		5B0944BF20A6BD9D00F670C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B0BBDDA20B06A33000C4B16 /* RecordTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecordTableViewController.h; sourceTree = "<group>"; };
+		5B0BBDDB20B06A33000C4B16 /* RecordTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecordTableViewController.m; sourceTree = "<group>"; };
 		5B13364B20A6E78E00340294 /* Timer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Timer.entitlements; sourceTree = "<group>"; };
 		5B2F410320AC55CC005DB99C /* z900rs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = z900rs.png; sourceTree = "<group>"; };
+		5B4594DB20AE7DA60091F87E /* TimeCount.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TimeCount.xcdatamodel; sourceTree = "<group>"; };
+		5B4594DD20AE7E710091F87E /* Time+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Time+CoreDataProperties.h"; sourceTree = "<group>"; };
+		5B4594DE20AE7E710091F87E /* Time+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Time+CoreDataClass.h"; sourceTree = "<group>"; };
+		5B4594DF20AE7E710091F87E /* Time+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Time+CoreDataClass.m"; sourceTree = "<group>"; };
+		5B4594E020AE7E710091F87E /* Time+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Time+CoreDataProperties.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,17 +119,26 @@
 		5B09449820A6BD9B00F670C3 /* Timer */ = {
 			isa = PBXGroup;
 			children = (
+				5B4594DD20AE7E710091F87E /* Time+CoreDataProperties.h */,
+				5B4594DE20AE7E710091F87E /* Time+CoreDataClass.h */,
+				5B4594DF20AE7E710091F87E /* Time+CoreDataClass.m */,
+				5B4594E020AE7E710091F87E /* Time+CoreDataProperties.m */,
 				5B13364B20A6E78E00340294 /* Timer.entitlements */,
-				5B2F410320AC55CC005DB99C /* z900rs.png */,
 				5B09449920A6BD9B00F670C3 /* AppDelegate.h */,
 				5B09449A20A6BD9B00F670C3 /* AppDelegate.m */,
 				5B09449C20A6BD9B00F670C3 /* ViewController.h */,
 				5B09449D20A6BD9B00F670C3 /* ViewController.m */,
 				5B09449F20A6BD9B00F670C3 /* Main.storyboard */,
+				5B0BBDDA20B06A33000C4B16 /* RecordTableViewController.h */,
+				5B0BBDDB20B06A33000C4B16 /* RecordTableViewController.m */,
+				5B00B30520D24A980001A0C8 /* DetailViewController.h */,
+				5B00B30620D24A980001A0C8 /* DetailViewController.m */,
 				5B0944A220A6BD9C00F670C3 /* Assets.xcassets */,
 				5B0944A420A6BD9C00F670C3 /* LaunchScreen.storyboard */,
 				5B0944A720A6BD9C00F670C3 /* Info.plist */,
 				5B0944A820A6BD9C00F670C3 /* main.m */,
+				5B2F410320AC55CC005DB99C /* z900rs.png */,
+				5B4594DA20AE7DA60091F87E /* TimeCount.xcdatamodeld */,
 			);
 			path = Timer;
 			sourceTree = "<group>";
@@ -285,7 +308,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B09449E20A6BD9B00F670C3 /* ViewController.m in Sources */,
+				5B0BBDDC20B06A33000C4B16 /* RecordTableViewController.m in Sources */,
 				5B0944A920A6BD9C00F670C3 /* main.m in Sources */,
+				5B00B30720D24A980001A0C8 /* DetailViewController.m in Sources */,
+				5B4594E120AE7E710091F87E /* Time+CoreDataClass.m in Sources */,
+				5B4594DC20AE7DA60091F87E /* TimeCount.xcdatamodeld in Sources */,
+				5B4594E220AE7E710091F87E /* Time+CoreDataProperties.m in Sources */,
 				5B09449B20A6BD9B00F670C3 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -595,6 +623,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5B4594DA20AE7DA60091F87E /* TimeCount.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5B4594DB20AE7DA60091F87E /* TimeCount.xcdatamodel */,
+			);
+			currentVersion = 5B4594DB20AE7DA60091F87E /* TimeCount.xcdatamodel */;
+			path = TimeCount.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 5B09448E20A6BD9B00F670C3 /* Project object */;
 }

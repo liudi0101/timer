@@ -8,8 +8,15 @@
 
 #import "ViewController.h"
 #import <CoreLocation/CoreLocation.h>
-const CGFloat endSpeed = 10; //测试极速值单位m/s；
-@interface ViewController ()<CLLocationManagerDelegate>
+#import "AppDelegate.h"
+#import <CoreData/CoreData.h>
+#import "Time+CoreDataClass.h"
+
+const CGFloat endSpeed = 10; //测试极速值单位:(m/s)
+
+@interface ViewController ()<CLLocationManagerDelegate>{
+    AppDelegate *appDelegate;
+}
 @end
 
 @implementation ViewController{
@@ -21,7 +28,10 @@ const CGFloat endSpeed = 10; //测试极速值单位m/s；
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    //时间框初始显示
     self.timeLabel.text=@"00:00:00";
+    //速度框初始显式
     self.speedLabel.text=@"0.0km/h";
     _locationManager = [[CLLocationManager alloc]init];
     if ([CLLocationManager locationServicesEnabled]) {
@@ -33,11 +43,15 @@ const CGFloat endSpeed = 10; //测试极速值单位m/s；
         _locationManager.distanceFilter = kCLDistanceFilterNone;
         _locationManager.delegate = self;
         [_locationManager startUpdatingLocation];
+#ifdef DEBUG
         NSLog(@"定位开启");
+#endif
     }
     else
     {
+#ifdef DEBUG
         NSLog(@"定位开启失败");
+#endif
     }
     // Do any additional setup after loading the view, typically from a nib.
 }
@@ -46,10 +60,13 @@ const CGFloat endSpeed = 10; //测试极速值单位m/s；
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-//开始按钮处理方法
+//开始计时按钮
 - (IBAction)start:(id)sender {
+#ifdef DEBUG
         NSLog(@"开始等待起步");
+#endif
         timer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(timeTick) userInfo:nil repeats:YES];
+        [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSDefaultRunLoopMode];
         [self timeTick];
 }
 
@@ -59,18 +76,45 @@ const CGFloat endSpeed = 10; //测试极速值单位m/s；
     self.speedLabel.text =@"0.0km/h";
     timer = nil;
     currentTime = 0;
+#ifdef DEBUG
     NSLog(@"计时器重置成功");
+#endif
+}
+
+- (IBAction)resultBn:(id)sender {
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Time" inManagedObjectContext:appDelegate.persistentContainer.viewContext];
+    NSFetchRequest *request = [[NSFetchRequest alloc]init];
+    [request setEntity:entity];
+    //NSPredicate *predicate = [NSPredicate predicateWithFormat:<#(nonnull NSString *), ...#>];
+    //[request setPredicate:predicate];
+    NSArray *resultArray = [appDelegate.persistentContainer.viewContext executeFetchRequest:request error:nil];
+    for (Time *time in resultArray) {
+        NSLog(@"%@ %@",time.date,time.time);
+    }
 }
 
 //计时器停止
 - (IBAction)stop:(id)sender {
     [timer invalidate];
+    {Time *time = [NSEntityDescription insertNewObjectForEntityForName:@"Time" inManagedObjectContext:appDelegate.persistentContainer.viewContext];
+    NSDate *currentDate = [NSDate date];
+    time.date =currentDate;
+    time.time = self.timeLabel.text;
+#ifdef DEBUG
+    NSLog(@"增加了一条记录日期%@时间%@",time.date,time.time);
+#endif
+    [appDelegate saveContext];
+    }
+#ifdef DEBUG
     NSLog(@"手动停止计时器计时");
+#endif
 }
 
 //计时算法
 -(void)timeTick{
+#ifdef DEBUG
     NSLog(@"进入计时方法");
+#endif
     if(speed>0&&speed<endSpeed){
         currentTime++;
         NSLog(@"%d",currentTime);
@@ -78,7 +122,15 @@ const CGFloat endSpeed = 10; //测试极速值单位m/s；
     }
     else if (speed>=endSpeed){
         [timer invalidate];
+        Time *time = [NSEntityDescription insertNewObjectForEntityForName:@"Time" inManagedObjectContext:appDelegate.persistentContainer.viewContext];
+        NSDate *currentDate = [NSDate date];
+        time.date =currentDate;
+        time.time = self.timeLabel.text;
+        self.resultTime.text = self.timeLabel.text;
+#ifdef DEBUG
+        NSLog(@"增加了一条记录日期%@时间%@",time.date,time.time);
         NSLog(@"自动停止计时器计时");
+#endif
     }
 }
 
@@ -96,13 +148,20 @@ const CGFloat endSpeed = 10; //测试极速值单位m/s；
 // 成功获取定位数据后方法
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations{
     CLLocation* location = locations.lastObject;
-    speed = location.speed;
+#ifdef DEBUG
+    speed = 1;
     NSLog(@"gps数据更新");
+#endif
+#ifdef RELEASE
+    speed = location.speed;
+#endif
 }
 
 // 定位失败时激发的方法
 - (void)locationManager:(CLLocationManager *)manager
        didFailWithError:(NSError *)error{
+#ifdef DEBUG
     NSLog(@"定位失败: %@",error);
+#endif
 }
 @end
