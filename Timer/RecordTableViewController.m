@@ -109,25 +109,61 @@
     // 让应用程序的窗口显示detailViewController
     [self showViewController:detailController sender: self];
 }
-/*
+//左滑删除
+- (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return @"删除";
+}
+
+
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the specified item to be editable.
     return YES;
 }
-*/
 
-/*
+
+
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSUInteger rowNo = indexPath.row;
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        //[tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        ///读取所有时间的实体
+        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Time"
+                                                  inManagedObjectContext:appDelegate.persistentContainer.viewContext];
+        ///创建请求
+        NSFetchRequest *request = [[NSFetchRequest alloc]init];
+        [request setEntity:entity];
+        Time *timeRequest = resultArray[rowNo];
+        NSString *deleteTime = (NSString*)timeRequest.time;
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"time=%@",deleteTime];
+        [request setPredicate:predicate];
+        
+        ///获取符合条件的结果
+        NSArray *deleteResultArray = [appDelegate.persistentContainer.viewContext executeFetchRequest:request
+                                                                                          error:nil];
+#ifdef DEBUG
+        NSLog(@"%@",deleteResultArray);
+#endif
+        if (deleteResultArray.count>0) {
+            for (Time *time in deleteResultArray) {
+                ///删除实体
+                [appDelegate.persistentContainer.viewContext deleteObject:time];
+            }
+            ///保存结果并且打印
+            [appDelegate saveContext];
+            [self.tableView reloadData];
+#ifdef DEBUG
+            NSLog(@"删除完成");
+#endif
+        }
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
-*/
+
 
 /*
 // Override to support rearranging the table view.
