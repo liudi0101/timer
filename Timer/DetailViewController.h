@@ -11,8 +11,8 @@
 @interface DetailViewController : UIViewController
 - (IBAction)returnBack:(id)sender;
 @property (strong, nonatomic) IBOutlet UILabel *dateLabel;
-@property (strong, nonatomic) NSIndexPath *editingIndexPath;
 @property (strong, nonatomic) IBOutlet UILabel *timeLabel;
+@property (strong, nonatomic) NSIndexPath *editingIndexPath;
 @property (strong, nonatomic) NSString    *time;
 @property (strong, nonatomic) NSDate      *date;
 @end

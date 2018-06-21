@@ -17,5 +17,10 @@
 @property (strong, nonatomic) IBOutlet UILabel *speedLabel;
 @property (strong, nonatomic) IBOutlet UILabel *resultTime;
 @property (strong, nonatomic) IBOutlet UIButton *resultBn;
+// 默认为YES
+@property(nonatomic) BOOL autoresizesSubviews;
+// 默认为UIViewAutoresizingNone
+@property(nonatomic) UIViewAutoresizing autoresizingMask;
+
 @end
 

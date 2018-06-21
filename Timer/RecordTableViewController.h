@@ -12,6 +12,5 @@
 #import "Time+CoreDataClass.h"
 
 @interface RecordTableViewController : UITableViewController
-@property (strong, nonatomic) IBOutlet UILabel *detailLabel;
 
 @end

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		5B00B30720D24A980001A0C8 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B00B30620D24A980001A0C8 /* DetailViewController.m */; };
-		5B00B31820D26DF00001A0C8 /* panle2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B00B31720D26DF00001A0C8 /* panle2.png */; };
 		5B09449B20A6BD9B00F670C3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B09449A20A6BD9B00F670C3 /* AppDelegate.m */; };
 		5B09449E20A6BD9B00F670C3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B09449D20A6BD9B00F670C3 /* ViewController.m */; };
 		5B0944A120A6BD9B00F670C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B09449F20A6BD9B00F670C3 /* Main.storyboard */; };
@@ -21,6 +20,13 @@
 		5B4594DC20AE7DA60091F87E /* TimeCount.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5B4594DA20AE7DA60091F87E /* TimeCount.xcdatamodeld */; };
 		5B4594E120AE7E710091F87E /* Time+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B4594DF20AE7E710091F87E /* Time+CoreDataClass.m */; };
 		5B4594E220AE7E710091F87E /* Time+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B4594E020AE7E710091F87E /* Time+CoreDataProperties.m */; };
+		5B60FC8720D8A61B002DD1A9 /* Gauge.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B60FC8620D8A61B002DD1A9 /* Gauge.m */; };
+		5B60FC8D20D8A9F7002DD1A9 /* pointer.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B60FC8920D8A9F7002DD1A9 /* pointer.png */; };
+		5B60FC8E20D8A9F7002DD1A9 /* pointer1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B60FC8A20D8A9F7002DD1A9 /* pointer1.png */; };
+		5B60FC8F20D8A9F7002DD1A9 /* pointer2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B60FC8B20D8A9F7002DD1A9 /* pointer2.png */; };
+		5B60FC9020D8A9F7002DD1A9 /* gaugeback.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B60FC8C20D8A9F7002DD1A9 /* gaugeback.png */; };
+		5B60FC9220D8AB02002DD1A9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B60FC9120D8AB02002DD1A9 /* QuartzCore.framework */; };
+		5BF0EF5E20DA62B2005B64F4 /* timg.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5BF0EF5D20DA62B2005B64F4 /* timg.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +49,6 @@
 /* Begin PBXFileReference section */
 		5B00B30520D24A980001A0C8 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		5B00B30620D24A980001A0C8 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
-		5B00B31720D26DF00001A0C8 /* panle2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = panle2.png; sourceTree = "<group>"; };
 		5B09449620A6BD9B00F670C3 /* Timer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Timer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B09449920A6BD9B00F670C3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5B09449A20A6BD9B00F670C3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -68,6 +73,14 @@
 		5B4594DE20AE7E710091F87E /* Time+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Time+CoreDataClass.h"; sourceTree = "<group>"; };
 		5B4594DF20AE7E710091F87E /* Time+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Time+CoreDataClass.m"; sourceTree = "<group>"; };
 		5B4594E020AE7E710091F87E /* Time+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Time+CoreDataProperties.m"; sourceTree = "<group>"; };
+		5B60FC8520D8A61B002DD1A9 /* Gauge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gauge.h; sourceTree = "<group>"; };
+		5B60FC8620D8A61B002DD1A9 /* Gauge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Gauge.m; sourceTree = "<group>"; };
+		5B60FC8920D8A9F7002DD1A9 /* pointer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pointer.png; sourceTree = "<group>"; };
+		5B60FC8A20D8A9F7002DD1A9 /* pointer1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pointer1.png; sourceTree = "<group>"; };
+		5B60FC8B20D8A9F7002DD1A9 /* pointer2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pointer2.png; sourceTree = "<group>"; };
+		5B60FC8C20D8A9F7002DD1A9 /* gaugeback.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gaugeback.png; sourceTree = "<group>"; };
+		5B60FC9120D8AB02002DD1A9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		5BF0EF5D20DA62B2005B64F4 /* timg.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = timg.jpeg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B60FC9220D8AB02002DD1A9 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +133,8 @@
 		5B09449820A6BD9B00F670C3 /* Timer */ = {
 			isa = PBXGroup;
 			children = (
+				5B60FC8820D8A9F7002DD1A9 /* pic */,
+				5B60FC8420D8A61B002DD1A9 /* thirdParts */,
 				5B4594DD20AE7E710091F87E /* Time+CoreDataProperties.h */,
 				5B4594DE20AE7E710091F87E /* Time+CoreDataClass.h */,
 				5B4594DF20AE7E710091F87E /* Time+CoreDataClass.m */,
@@ -134,11 +150,11 @@
 				5B00B30520D24A980001A0C8 /* DetailViewController.h */,
 				5B00B30620D24A980001A0C8 /* DetailViewController.m */,
 				5B0944A220A6BD9C00F670C3 /* Assets.xcassets */,
-				5B00B31720D26DF00001A0C8 /* panle2.png */,
 				5B0944A420A6BD9C00F670C3 /* LaunchScreen.storyboard */,
 				5B0944A720A6BD9C00F670C3 /* Info.plist */,
 				5B0944A820A6BD9C00F670C3 /* main.m */,
 				5B4594DA20AE7DA60091F87E /* TimeCount.xcdatamodeld */,
+				5BF0EF5D20DA62B2005B64F4 /* timg.jpeg */,
 			);
 			path = Timer;
 			sourceTree = "<group>";
@@ -164,8 +180,29 @@
 		5B13364820A6E78E00340294 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5B60FC9120D8AB02002DD1A9 /* QuartzCore.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5B60FC8420D8A61B002DD1A9 /* thirdParts */ = {
+			isa = PBXGroup;
+			children = (
+				5B60FC8520D8A61B002DD1A9 /* Gauge.h */,
+				5B60FC8620D8A61B002DD1A9 /* Gauge.m */,
+			);
+			path = thirdParts;
+			sourceTree = "<group>";
+		};
+		5B60FC8820D8A9F7002DD1A9 /* pic */ = {
+			isa = PBXGroup;
+			children = (
+				5B60FC8920D8A9F7002DD1A9 /* pointer.png */,
+				5B60FC8A20D8A9F7002DD1A9 /* pointer1.png */,
+				5B60FC8B20D8A9F7002DD1A9 /* pointer2.png */,
+				5B60FC8C20D8A9F7002DD1A9 /* gaugeback.png */,
+			);
+			path = pic;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,10 +317,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B00B31820D26DF00001A0C8 /* panle2.png in Resources */,
+				5B60FC8F20D8A9F7002DD1A9 /* pointer2.png in Resources */,
+				5B60FC9020D8A9F7002DD1A9 /* gaugeback.png in Resources */,
 				5B0944A620A6BD9C00F670C3 /* LaunchScreen.storyboard in Resources */,
 				5B0944A320A6BD9C00F670C3 /* Assets.xcassets in Resources */,
+				5B60FC8E20D8A9F7002DD1A9 /* pointer1.png in Resources */,
 				5B0944A120A6BD9B00F670C3 /* Main.storyboard in Resources */,
+				5B60FC8D20D8A9F7002DD1A9 /* pointer.png in Resources */,
+				5BF0EF5E20DA62B2005B64F4 /* timg.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,6 +355,7 @@
 				5B00B30720D24A980001A0C8 /* DetailViewController.m in Sources */,
 				5B4594E120AE7E710091F87E /* Time+CoreDataClass.m in Sources */,
 				5B4594DC20AE7DA60091F87E /* TimeCount.xcdatamodeld in Sources */,
+				5B60FC8720D8A61B002DD1A9 /* Gauge.m in Sources */,
 				5B4594E220AE7E710091F87E /* Time+CoreDataProperties.m in Sources */,
 				5B09449B20A6BD9B00F670C3 /* AppDelegate.m in Sources */,
 			);
